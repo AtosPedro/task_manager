@@ -1,4 +1,6 @@
-#[derive(Debug, serde::Deserialize)]
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Task {
     pub title: Option<String>,
     pub description: Option<String>,
@@ -11,7 +13,7 @@ impl Task {
     }
 }
 
-#[derive(Debug, serde::Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub enum TaskStatus {
     NotStarted,
     InProgress,
